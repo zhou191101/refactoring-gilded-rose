@@ -6,6 +6,10 @@ class GildedRose {
     private String BACKSTAGE = "Backstage passes to a TAFKAL80ETC concert";
     private String SULFURAS = "Sulfuras, Hand of Ragnaros";
 
+    public Item[] getItems() {
+        return this.items;
+    }
+
     public GildedRose(Item[] items) {
         this.items = items;
     }
