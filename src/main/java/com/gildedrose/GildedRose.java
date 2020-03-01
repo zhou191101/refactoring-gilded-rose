@@ -19,15 +19,15 @@ class GildedRose {
 
 
     public void update_quality() {
-        for (int i = 0; i < items.length; i++) {
-            if (canChangeQuality(items[i])) {
-                items[i].setQuality(items[i].getQuality() - 1);
+        for (Item item : items) {
+            if (canChangeQuality(item)) {
+                item.setQuality(item.getQuality() - 1);
             } else {
-                changeQualityWhenQualityLessThanFifty(items[i]);
+                changeQualityWhenQualityLessThanFifty(item);
             }
-            changeSpecialSellIn(items[i]);
+            changeSpecialSellIn(item);
 
-            changeQualityWhenSellInLessThanZero(items[i]);
+            changeQualityWhenSellInLessThanZero(item);
         }
     }
 
