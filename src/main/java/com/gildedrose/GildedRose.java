@@ -20,7 +20,7 @@ class GildedRose {
 
     public void update_quality() {
         for (Item item : items) {
-            if (canChangeQuality(item)) {
+            if (canChangeQualityByItemName(item)) {
                 item.setQuality(item.getQuality() - 1);
             } else {
                 changeQualityWhenQualityLessThanFifty(item);
@@ -38,7 +38,7 @@ class GildedRose {
         }
     }
 
-    private boolean canChangeQuality(Item item) {
+    private boolean canChangeQualityByItemName(Item item) {
         List<String> notChangeItems = Arrays.asList(AGED_BRIE, BACKSTAGE, SULFURAS);
         return !notChangeItems.contains(item.getName()) && item.getQuality() > 0;
     }
