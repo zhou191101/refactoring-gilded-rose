@@ -1,5 +1,8 @@
 package com.gildedrose;
 
+import java.util.Arrays;
+import java.util.List;
+
 class GildedRose {
     private Item[] items;
     private String AGED_BRIE = "Aged Brie";
@@ -14,15 +17,15 @@ class GildedRose {
         this.items = items;
     }
 
+    private boolean canChangeQuality(Item item) {
+        List<String> notChangeItems = Arrays.asList(AGED_BRIE, BACKSTAGE, SULFURAS);
+        return !notChangeItems.contains(item.getName()) && item.getQuality() > 0;
+    }
+
     public void update_quality() {
         for (int i = 0; i < items.length; i++) {
-            if (!items[i].getName().equals(AGED_BRIE)
-                    && !items[i].getName().equals(BACKSTAGE)) {
-                if (items[i].getQuality() > 0) {
-                    if (!items[i].getName().equals(SULFURAS)) {
-                        items[i].setQuality(items[i].getQuality() - 1);
-                    }
-                }
+            if (canChangeQuality(items[i])) {
+                items[i].setQuality(items[i].getQuality() - 1);
             } else {
                 if (items[i].getQuality() < 50) {
                     items[i].setQuality(items[i].getQuality() + 1);
