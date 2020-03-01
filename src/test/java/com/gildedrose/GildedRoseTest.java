@@ -31,7 +31,7 @@ public class GildedRoseTest {
     public void foo() {
         Item[] items = new Item[]{new Item("foo", 1, 5)};
         GildedRose app = new GildedRose(items);
-        app.update_quality();
+        app.updateQualityAndSellIn();
         assertEquals("foo", app.getItems()[0].getName());
         assertThat(app.getItems()[0].getQuality(), is(4));
         assertThat(app.getItems()[0].getSellIn(), is(0));
@@ -66,7 +66,7 @@ public class GildedRoseTest {
     @Test
     public void should_print_sellin_and_quality_when_day2() {
         GildedRose  app = new GildedRose(items);
-        app.update_quality();
+        app.updateQualityAndSellIn();
         assertThat(app.getItems()[0].getSellIn(), is(9));
         assertThat(app.getItems()[0].getQuality(), is(19));
         assertThat(app.getItems()[1].getSellIn(), is(1));
@@ -93,8 +93,8 @@ public class GildedRoseTest {
     @Test
     public void should_print_sellin_and_quality_when_day3() {
         GildedRose  app = new GildedRose(items);
-        app.update_quality();
-        app.update_quality();
+        app.updateQualityAndSellIn();
+        app.updateQualityAndSellIn();
         assertThat(app.getItems()[0].getSellIn(), is(8));
         assertThat(app.getItems()[0].getQuality(), is(18));
         assertThat(app.getItems()[1].getSellIn(), is(0));

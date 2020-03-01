@@ -18,7 +18,7 @@ class GildedRose {
     }
 
 
-    public void update_quality() {
+    public void updateQualityAndSellIn() {
         for (Item item : items) {
             if (canChangeQualityByItemName(item)) {
                 item.setQuality(item.getQuality() - 1);
