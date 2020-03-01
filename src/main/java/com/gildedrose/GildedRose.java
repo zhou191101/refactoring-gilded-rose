@@ -29,19 +29,7 @@ class GildedRose {
             } else {
                 if (items[i].getQuality() < 50) {
                     items[i].setQuality(items[i].getQuality() + 1);
-                    if (items[i].getName().equals(BACKSTAGE)) {
-                        if (items[i].getSellIn() < 11) {
-                            if (items[i].getQuality() < 50) {
-                                items[i].setQuality(items[i].getQuality() + 1);
-                            }
-                        }
-
-                        if (items[i].getSellIn() < 6) {
-                            if (items[i].getQuality() < 50) {
-                                items[i].setQuality(items[i].getQuality() + 1);
-                            }
-                        }
-                    }
+                    changeSpecialItemQuality(items[i]);
                 }
             }
 
@@ -64,6 +52,22 @@ class GildedRose {
                     if (items[i].getQuality() < 50) {
                         items[i].setQuality(items[i].getQuality() + 1);
                     }
+                }
+            }
+        }
+    }
+
+    private void changeSpecialItemQuality(Item item) {
+        if (item.getName().equals(BACKSTAGE)) {
+            if (item.getSellIn() < 11) {
+                if (item.getQuality() < 50) {
+                    item.setQuality(item.getQuality() + 1);
+                }
+            }
+
+            if (item.getSellIn() < 6) {
+                if (item.getQuality() < 50) {
+                    item.setQuality(item.getQuality() + 1);
                 }
             }
         }
