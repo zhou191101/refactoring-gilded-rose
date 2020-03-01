@@ -17,10 +17,6 @@ class GildedRose {
         this.items = items;
     }
 
-    private boolean canChangeQuality(Item item) {
-        List<String> notChangeItems = Arrays.asList(AGED_BRIE, BACKSTAGE, SULFURAS);
-        return !notChangeItems.contains(item.getName()) && item.getQuality() > 0;
-    }
 
     public void update_quality() {
         for (int i = 0; i < items.length; i++) {
@@ -42,10 +38,16 @@ class GildedRose {
         }
     }
 
+    private boolean canChangeQuality(Item item) {
+        List<String> notChangeItems = Arrays.asList(AGED_BRIE, BACKSTAGE, SULFURAS);
+        return !notChangeItems.contains(item.getName()) && item.getQuality() > 0;
+    }
+
+
     private void changeQualityWhenSellInLessThanZero(Item item) {
         if (item.getSellIn() < 0) {
             if (!item.getName().equals(AGED_BRIE)) {
-                if (!item.getName().equals(BACKSTAGE)) {
+                if (!isSpecialName(item)) {
                     if (item.getQuality() > 0 && !item.getName().equals(SULFURAS)) {
                         item.setQuality(item.getQuality() - 1);
                     }
@@ -60,6 +62,10 @@ class GildedRose {
         }
     }
 
+    private boolean isSpecialName(Item item) {
+        return item.getName().equals(BACKSTAGE);
+    }
+
     private void changeSpecialSellIn(Item item) {
         if (!item.getName().equals(SULFURAS)) {
             item.setSellIn(item.getSellIn() - 1);
@@ -67,7 +73,7 @@ class GildedRose {
     }
 
     private void changeSpecialItemQuality(Item item) {
-        if (item.getName().equals(BACKSTAGE)) {
+        if (isSpecialName(item)) {
             if (item.getSellIn() < 11) {
                 if (item.getQuality() < 50) {
                     item.setQuality(item.getQuality() + 1);
