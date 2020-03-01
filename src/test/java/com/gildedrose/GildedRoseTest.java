@@ -32,34 +32,34 @@ public class GildedRoseTest {
         Item[] items = new Item[]{new Item("foo", 1, 5)};
         GildedRose app = new GildedRose(items);
         app.update_quality();
-        assertEquals("foo", app.getItems()[0].name);
-        assertThat(app.getItems()[0].quality, is(4));
-        assertThat(app.getItems()[0].sellIn, is(0));
+        assertEquals("foo", app.getItems()[0].getName());
+        assertThat(app.getItems()[0].getQuality(), is(4));
+        assertThat(app.getItems()[0].getSellIn(), is(0));
     }
 
     @Test
     public void should_print_sellin_and_quality_when_day1() {
         GildedRose  app = new GildedRose(items);
-        assertThat(app.getItems()[0].sellIn, is(10));
-        assertThat(app.getItems()[0].quality, is(20));
-        assertThat(app.getItems()[1].sellIn, is(2));
-        assertThat(app.getItems()[1].quality, is(0));
-        assertThat(app.getItems()[2].sellIn, is(5));
-        assertThat(app.getItems()[2].quality, is(7));
-        assertThat(app.getItems()[3].sellIn, is(0));
-        assertThat(app.getItems()[3].quality, is(80));
-        assertThat(app.getItems()[4].sellIn, is(-1));
-        assertThat(app.getItems()[4].quality, is(80));
-        assertThat(app.getItems()[5].sellIn, is(15));
-        assertThat(app.getItems()[5].quality, is(20));
-        assertThat(app.getItems()[6].sellIn, is(10));
-        assertThat(app.getItems()[6].quality, is(49));
-        assertThat(app.getItems()[7].sellIn, is(5));
-        assertThat(app.getItems()[7].quality, is(49));
-        assertThat(app.getItems()[8].sellIn, is(1));
-        assertThat(app.getItems()[8].quality, is(20));
-        assertThat(app.getItems()[9].sellIn, is(3));
-        assertThat(app.getItems()[9].quality, is(6));
+        assertThat(app.getItems()[0].getSellIn(), is(10));
+        assertThat(app.getItems()[0].getQuality(), is(20));
+        assertThat(app.getItems()[1].getSellIn(), is(2));
+        assertThat(app.getItems()[1].getQuality(), is(0));
+        assertThat(app.getItems()[2].getSellIn(), is(5));
+        assertThat(app.getItems()[2].getQuality(), is(7));
+        assertThat(app.getItems()[3].getSellIn(), is(0));
+        assertThat(app.getItems()[3].getQuality(), is(80));
+        assertThat(app.getItems()[4].getSellIn(), is(-1));
+        assertThat(app.getItems()[4].getQuality(), is(80));
+        assertThat(app.getItems()[5].getSellIn(), is(15));
+        assertThat(app.getItems()[5].getQuality(), is(20));
+        assertThat(app.getItems()[6].getSellIn(), is(10));
+        assertThat(app.getItems()[6].getQuality(), is(49));
+        assertThat(app.getItems()[7].getSellIn(), is(5));
+        assertThat(app.getItems()[7].getQuality(), is(49));
+        assertThat(app.getItems()[8].getSellIn(), is(1));
+        assertThat(app.getItems()[8].getQuality(), is(20));
+        assertThat(app.getItems()[9].getSellIn(), is(3));
+        assertThat(app.getItems()[9].getQuality(), is(6));
 
     }
 
@@ -67,26 +67,26 @@ public class GildedRoseTest {
     public void should_print_sellin_and_quality_when_day2() {
         GildedRose  app = new GildedRose(items);
         app.update_quality();
-        assertThat(app.getItems()[0].sellIn, is(9));
-        assertThat(app.getItems()[0].quality, is(19));
-        assertThat(app.getItems()[1].sellIn, is(1));
-        assertThat(app.getItems()[1].quality, is(1));
-        assertThat(app.getItems()[2].sellIn, is(4));
-        assertThat(app.getItems()[2].quality, is(6));
-        assertThat(app.getItems()[3].sellIn, is(0));
-        assertThat(app.getItems()[3].quality, is(80));
-        assertThat(app.getItems()[4].sellIn, is(-1));
-        assertThat(app.getItems()[4].quality, is(80));
-        assertThat(app.getItems()[5].sellIn, is(14));
-        assertThat(app.getItems()[5].quality, is(21));
-        assertThat(app.getItems()[6].sellIn, is(9));
-        assertThat(app.getItems()[6].quality, is(50));
-        assertThat(app.getItems()[7].sellIn, is(4));
-        assertThat(app.getItems()[7].quality, is(50));
-        assertThat(app.getItems()[8].sellIn, is(0));
-        assertThat(app.getItems()[8].quality, is(23));
-        assertThat(app.getItems()[9].sellIn, is(2));
-        assertThat(app.getItems()[9].quality, is(5));
+        assertThat(app.getItems()[0].getSellIn(), is(9));
+        assertThat(app.getItems()[0].getQuality(), is(19));
+        assertThat(app.getItems()[1].getSellIn(), is(1));
+        assertThat(app.getItems()[1].getQuality(), is(1));
+        assertThat(app.getItems()[2].getSellIn(), is(4));
+        assertThat(app.getItems()[2].getQuality(), is(6));
+        assertThat(app.getItems()[3].getSellIn(), is(0));
+        assertThat(app.getItems()[3].getQuality(), is(80));
+        assertThat(app.getItems()[4].getSellIn(), is(-1));
+        assertThat(app.getItems()[4].getQuality(), is(80));
+        assertThat(app.getItems()[5].getSellIn(), is(14));
+        assertThat(app.getItems()[5].getQuality(), is(21));
+        assertThat(app.getItems()[6].getSellIn(), is(9));
+        assertThat(app.getItems()[6].getQuality(), is(50));
+        assertThat(app.getItems()[7].getSellIn(), is(4));
+        assertThat(app.getItems()[7].getQuality(), is(50));
+        assertThat(app.getItems()[8].getSellIn(), is(0));
+        assertThat(app.getItems()[8].getQuality(), is(23));
+        assertThat(app.getItems()[9].getSellIn(), is(2));
+        assertThat(app.getItems()[9].getQuality(), is(5));
 
     }
 
@@ -95,26 +95,26 @@ public class GildedRoseTest {
         GildedRose  app = new GildedRose(items);
         app.update_quality();
         app.update_quality();
-        assertThat(app.getItems()[0].sellIn, is(8));
-        assertThat(app.getItems()[0].quality, is(18));
-        assertThat(app.getItems()[1].sellIn, is(0));
-        assertThat(app.getItems()[1].quality, is(2));
-        assertThat(app.getItems()[2].sellIn, is(3));
-        assertThat(app.getItems()[2].quality, is(5));
-        assertThat(app.getItems()[3].sellIn, is(0));
-        assertThat(app.getItems()[3].quality, is(80));
-        assertThat(app.getItems()[4].sellIn, is(-1));
-        assertThat(app.getItems()[4].quality, is(80));
-        assertThat(app.getItems()[5].sellIn, is(13));
-        assertThat(app.getItems()[5].quality, is(22));
-        assertThat(app.getItems()[6].sellIn, is(8));
-        assertThat(app.getItems()[6].quality, is(50));
-        assertThat(app.getItems()[7].sellIn, is(3));
-        assertThat(app.getItems()[7].quality, is(50));
-        assertThat(app.getItems()[8].sellIn, is(-1));
-        assertThat(app.getItems()[8].quality, is(0));
-        assertThat(app.getItems()[9].sellIn, is(1));
-        assertThat(app.getItems()[9].quality, is(4));
+        assertThat(app.getItems()[0].getSellIn(), is(8));
+        assertThat(app.getItems()[0].getQuality(), is(18));
+        assertThat(app.getItems()[1].getSellIn(), is(0));
+        assertThat(app.getItems()[1].getQuality(), is(2));
+        assertThat(app.getItems()[2].getSellIn(), is(3));
+        assertThat(app.getItems()[2].getQuality(), is(5));
+        assertThat(app.getItems()[3].getSellIn(), is(0));
+        assertThat(app.getItems()[3].getQuality(), is(80));
+        assertThat(app.getItems()[4].getSellIn(), is(-1));
+        assertThat(app.getItems()[4].getQuality(), is(80));
+        assertThat(app.getItems()[5].getSellIn(), is(13));
+        assertThat(app.getItems()[5].getQuality(), is(22));
+        assertThat(app.getItems()[6].getSellIn(), is(8));
+        assertThat(app.getItems()[6].getQuality(), is(50));
+        assertThat(app.getItems()[7].getSellIn(), is(3));
+        assertThat(app.getItems()[7].getQuality(), is(50));
+        assertThat(app.getItems()[8].getSellIn(), is(-1));
+        assertThat(app.getItems()[8].getQuality(), is(0));
+        assertThat(app.getItems()[9].getSellIn(), is(1));
+        assertThat(app.getItems()[9].getQuality(), is(4));
 
 
     }
